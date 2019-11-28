@@ -1,0 +1,16 @@
+.nav-item-active {
+	background-color: #515559;
+}
+.nav-link-active{
+	color: white !important; 
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    float: left;
+    padding-left: 1vw;
+}
