@@ -44,7 +44,34 @@
 
 	<div class="container-fluid content">
 		<h2 style="margin-top: 1vw">Izvajanje meritev</h2>
-		<p>Tukaj bo opis meritev, ki so se izvedla na Fakulteti za elektrotehniko Univerze v Ljubljani.</p>
+		<p><br>
+		Ugotovili smo, da za izdelavo zvočnika potrebujemo natančno analizo zvočnikov, ki jih bomo vgradili v škatlo.
+		Pri tem nam je pomagal <i>dr. Samo Beguš</i> s Fakultete za elektrotehniko Univerze v Ljubljani. Odločili smo se, da
+		si bomo pomagali s prostodostopnim programom <a href='https://www.roomeqwizard.com/'>Room EQ Wizard</a>. Podatki, s katerimi opišemo vsak zvočnik, se imenujejo
+		Thiele-Small parametri oz. TS parametri. Program Room EQ Wizard oz. REW izračuna TS parametre z dvema
+		meritvama impedance - pri drugi meritvi dodamo na membrano zvočnika znano maso. Program na podlagi razlik med
+		izmerjenima impedancama neobtežene in obtežene membrane izračuna TS parametre.
+		Na spletni strani programa (<a href='https://www.roomeqwizard.com'>www.roomeqwizard.com/</a>) je jasno opisan postopek meritve
+		impedance (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/impedancemeasurement.html#top'>www.roomeqwizard.com/</a>) in
+		izračuna TS parametrov (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/thielesmall.html#top'>www.roomeqwizard.com/</a>)
+		<br><br>
+		Izvedli smo več meritev - frekvenčni odziv samo nizkotonskega zvočnika, frekvenčni odziv samo visokotonskega zvočnika
+		in frekvenčni odziv obeh zvočnikov skupaj, <u>brez</u> kretnice.
+		V programu smo kasneje primerjali podatke dejanske meritve obeh s podatki, ki jih dobimo, če seštejemo posamezni meritvi.
+		Izkaže se, da podatki ne sovpadajo. To nas je presenetilo, zato smo raziskovali naprej.
+		Ugotovili smo, da obstaja t.i. akustični zamik.<br> <img src='wiki.jpg'><br> Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok
+		"rodi". Z analizo podatkov smo ugotovili, da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega
+		zamaknjen za 24 mm (konkretno za zvočnika <u>P21RE4X/DC</u> in <u>27TFFD</u>).
+		sliki VITUIXCAD
+		<br><br>
+		MERITVE, SLIKE
+		<br><br>
+		Odločili smo se, da izdelamo nov zvočnik, verzija 2. Da bi odpravili akustični zamik, potrebujemo premik
+		nizkotonskega zvočnika za 24 mm naprej. Odločili smo se za stopničasto sprednjo ploščo, saj je tako najlažje
+		nizkotonski zvočnik premakniti naprej. Narisali smo 3D model novega zvočnika - dobili smo nekaj novih
+		dizajnov, ki jih bomo preizkusili. Poleg tega smo se odločili, da bomo nov zvočnik izdelali malce drugače, zato
+		smo s šolskim 3D tiskalnikom izdelali kotnike izključno za lažjo sestavo novega zvočnika.
+		</p>
 	</div>
 
 	<footer class="footer">
@@ -65,14 +92,21 @@
 			<div class="column">
 				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"><br>
 			</div>
+			<div class="column">
+				<a href="http://www.fe.uni-lj.si/en/"><img src="UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"><br>
+			</div>
+			<div class="column">
+				<a href="https://www.fmf.uni-lj.si/en/"><img src="FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"><br>
+			</div>
 			
 		</div>
 		<div>
 			<br><br><br><br><br><br><br>
+			<a href="http://gimvic.org">
 			&copy; 2019 Gimnazija Vič
+			</a>
 		</div>
 	</footer>
-
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
