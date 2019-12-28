@@ -2,7 +2,7 @@
 	background-color: #515559;
 }
 .nav-link-active{
-	color: white !important; 
+	color: white !important;
 }
 
 
@@ -15,3 +15,8 @@
 	min-height: 100vh;
 }
 
+.picture img{
+	width: 40vw;
+	height: auto;
+	padding-top: 10px;
+}
