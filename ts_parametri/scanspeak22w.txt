@@ -1,0 +1,43 @@
+TS Parameters file
+Room EQ V5,20
+Dated: 29.5.2019 11:26:00
+From measurement Scanspeak 22W
+
+Zmin 6.55 ohm
+fmin 201 Hz
+f3 1687 Hz
+Le(f3) 0.383 mH
+Motional impedance parameters
+RES 133.17 ohm
+LCES 52.100 mH
+CMES 385.1 uF
+RAMS 133166.049 mohm
+Blocked impedance parameters
+RDC 5.30 ohm
+dR 0.09 ohm
+Re 5.39 ohm
+Leb 140.0 uH
+Le 280594.857 mH
+Rss 80.7 ohm
+Ke 0.0429 S-H
+Thiele-Small parameters
+fs 35.5 Hz
+Qms 4.290
+Qes 0.463
+Qts 0.418
+Fts 85.0
+Mms 26.95 g
+Cms 0.744 mm/N
+Rms 1.403 kg/s
+Vas 61.09 litres
+Bl 8.366 Tm
+Eta 0.58 %
+Lp (1W/1m) 89.78 dB
+Dd 17.50 cm
+Sd 240.5 cm^2
+Added mass 5.00 g
+Secondary measurement: Scanspeak 22W 5g
+Air temperature 20.0 C
+Air pressure 1013.25 mB
+Air density 1.2041 kg/m^3
+Speed of sound 343.2 m/s

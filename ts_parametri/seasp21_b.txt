@@ -1,0 +1,43 @@
+TS Parameters file
+Room EQ V5,20
+Dated: 29.5.2019 11:21:20
+From measurement Seas p21 b
+
+Zmin 6.25 ohm
+fmin 199 Hz
+f3 1447 Hz
+Le(f3) 0.508 mH
+Motional impedance parameters
+RES 39.37 ohm
+LCES 28.608 mH
+CMES 595.0 uF
+RAMS 39365.531 mohm
+Blocked impedance parameters
+RDC 6.02 ohm
+dR 0.18 ohm
+Re 6.20 ohm
+Leb 38.4 uH
+Le 0.778 mH
+Rss 449.2 ohm
+Ke 0.1233 S-H
+Thiele-Small parameters
+fs 38.6 Hz
+Qms 4.055
+Qes 0.893
+Qts 0.732
+Fts 52.7
+Mms 27.79 g
+Cms 0.612 mm/N
+Rms 1.661 kg/s
+Vas 42.69 litres
+Bl 6.834 Tm
+Eta 0.27 %
+Lp (1W/1m) 86.44 dB
+Dd 16.80 cm
+Sd 221.7 cm^2
+Added mass 5.00 g
+Secondary measurement: Seas p21 b 5g
+Air temperature 20.0 C
+Air pressure 1013.25 mB
+Air density 1.2041 kg/m^3
+Speed of sound 343.2 m/s
