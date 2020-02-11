@@ -1,0 +1,43 @@
+TS Parameters file
+Room EQ V5,20
+Dated: 27.5.2019 13:04:26
+From measurement Scanspeak 18w
+
+Zmin 6.32 ohm
+fmin 290 Hz
+f3 1745 Hz
+Le(f3) 0.392 mH
+Motional impedance parameters
+RES 110.68 ohm
+LCES 36.176 mH
+CMES 286.9 uF
+RAMS 110684.883 mohm
+Blocked impedance parameters
+RDC 5.71 ohm
+dR 0.41 ohm
+Re 6.11 ohm
+Leb 117.5 uH
+Le 0.770 mH
+Rss 100000.0 ohm
+Ke 0.0624 S-H
+Thiele-Small parameters
+fs 49.4 Hz
+Qms 5.029
+Qes 0.545
+Qts 0.491
+Fts 100.5
+Mms 11.98 g
+Cms 0.867 mm/N
+Rms 0.739 kg/s
+Vas 23.73 litres
+Bl 6.461 Tm
+Eta 0.51 %
+Lp (1W/1m) 89.26 dB
+Dd 13.30 cm
+Sd 138.9 cm^2
+Added mass 5.00 g
+Secondary measurement: Scanspeak 18w 5g
+Air temperature 20.0 C
+Air pressure 1013.25 mB
+Air density 1.2041 kg/m^3
+Speed of sound 343.2 m/s

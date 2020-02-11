@@ -1,0 +1,43 @@
+TS Parameters file
+Room EQ V5,20
+Dated: 29.5.2019 11:33:56
+From measurement Scanspeak R2604
+
+Zmin 3.46 ohm
+fmin 2379 Hz
+f3 20000 Hz
+Le(f3) 0.010 mH
+Motional impedance parameters
+RES 13.56 ohm
+LCES 1.497 mH
+CMES 75.1 uF
+RAMS 13555.156 mohm
+Blocked impedance parameters
+RDC 3.00 ohm
+dR 0.10 ohm
+Re 3.10 ohm
+Leb 7.7 uH
+Le 0.062 mH
+Rss 1.3 ohm
+Ke 0.0081 S-H
+Thiele-Small parameters
+fs 474.7 Hz
+Qms 3.035
+Qes 0.694
+Qts 0.565
+Fts 840.2
+Mms 0.29 g
+Cms 0.382 mm/N
+Rms 0.289 kg/s
+Vas 0.05 litres
+Bl 1.981 Tm
+Eta 0.75 %
+Lp (1W/1m) 90.93 dB
+Dd 3.50 cm
+Sd 9.6 cm^2
+Added mass 2.50 g
+Secondary measurement: Scanspeak R2604 2.5g
+Air temperature 20.0 C
+Air pressure 1013.25 mB
+Air density 1.2041 kg/m^3
+Speed of sound 343.2 m/s

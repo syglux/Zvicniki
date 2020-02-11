@@ -9,28 +9,31 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 
-	<title>Zvičniki</title>
+	<title>ZVičNIKI</title>
 </head>
 
 <body class="main">
 
 	<div class="jumbotron text-center" style="margin-bottom:0;">
-		<h1>Predstavitev projekta Zvičniki</h1>
-		<p>Izdelava Hi-Fi zvočnikov</p> 
+		<h1>Predstavitev projekta ZVičNIKI</h1>
+		<p>Izdelava Hi-Fi zvočnikov</p>
 	</div>
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<a class="navbar-brand" href="">Zvičniki</a>
+		<a class="navbar-brand" href="home.html">ZVičNIKI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<div class="navbar-nav">
 				<div class="nav-item">
-					<a class="nav-link" href="home.html">Domov</a>
+					<a class="nav-link" href="home.html">Uvod</a>
+				</div>
+				<div class="nav-item">
+					<a class="nav-link" href="teoreticneosnove.html">Teoretične osnove</a>
 				</div>
 				<div class="nav-item-active">
-					<a class="nav-link nav-link-active" href="meritve.html">Meritve</a>
+					<a class="nav-link-active nav-link" href="meritve.html">Meritve</a>
 				</div>
 				<div class="nav-item">
 					<a class="nav-link" href="ohisje.html">Ohišje</a>
@@ -39,48 +42,125 @@
 					<a class="nav-link" href="kretnica.html">Kretnica</a>
 				</div>
 			</div>
-		</div>  
+		</div>
 	</nav>
 
 	<div class="container-fluid content">
 		<h2 style="margin-top: 1vw">Izvajanje meritev</h2>
-		<p>Tukaj bo opis meritev, ki so se izvedla na Fakulteti za elektrotehniko Univerze v Ljubljani.</p>
+		<div>
+		Ugotovili smo, da za izdelavo zvočnika potrebujemo natančno analizo zvočnikov, ki jih bomo vgradili v škatlo.
+		Pri tem nam je pomagal <i>dr. Samo Beguš</i> s Fakultete za elektrotehniko Univerze v Ljubljani. Odločili smo se, da
+		si bomo pomagali s prostodostopnim programom <a href='https://www.roomeqwizard.com/'>Room EQ Wizard</a>. Podatki, s katerimi opišemo vsak zvočnik, se imenujejo
+		Thiele-Small parametri oz. TS parametri. Program Room EQ Wizard oz. REW izračuna TS parametre z dvema
+		meritvama impedance - pri drugi meritvi dodamo na membrano zvočnika znano maso. Program na podlagi razlik med
+		izmerjenima impedancama neobtežene in obtežene membrane izračuna TS parametre.
+		Na spletni strani programa (<a href='https://www.roomeqwizard.com'>www.roomeqwizard.com/</a>) je jasno opisan postopek meritve
+		impedance (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/impedancemeasurement.html#top'>www.roomeqwizard.com/</a>) in
+		izračuna TS parametrov (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/thielesmall.html#top'>www.roomeqwizard.com/</a>)
+			<div>
+			Za vse zvočnike, ki smo jih prejeli, smo opravili meritve impedance v gluhi sobi Fakultete za elektrotehniko
+			UL in tako izračunali TS parametre za vse zvočnike. Rezultati naših meritev so zbrani v tabeli spodaj.
+			<h2>TS parametri</h2>
+			<table>
+			  <tr>
+			    <th>Podjetje</th>
+			    <th>Model</th>
+			    <th>Parametri</th>
+			  </tr>
+			  <tr>
+			    <td>ScanSpeak</td>
+			    <td>R2604/8320000</td>
+			    <td><a href='ts_parametri/scanspeakR2604.txt' download='scanspeakR2604.txt'>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>ScanSpeak</td>
+			    <td>10F/8414G10</td>
+			    <td><a href='ts_parametri/scanspeak10F.txt' download='scanspeak10F.txt'>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>ScanSpeak</td>
+			    <td>18W/8434G00</td>
+			    <td><a href='ts_parametri/scanspeak18w_b.txt' download='scanspeak18w.txt'>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>ScanSpeak</td>
+			    <td>22W/8534G00</td>
+			    <td><a href='ts_parametri/scanspeak22w.txt' download='scanspeak22w.txt'>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>SEAS</td>
+			    <td>H0978-06 27TFFD</td>
+			    <td><a href='ts_parametri/' download=''>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>SEAS</td>
+			    <td>H0442-08 P21RE4X/DC</td>
+			    <td><a href='ts_parametri/seasp21_dual_coil.txt' download='seasp21_dual_coil.txt'>TS parametri</a></td>
+			  </tr>
+				<tr>
+			    <td>SEAS</td>
+			    <td>H1291-08 W15CY/TV-NHT</td>
+			    <td><a href='ts_parametri/seas W15CY.txt' download='seas W15CY.txt'>TS parametri</a></td>
+			  </tr>
+			</table>
+
+			<div class="picture">
+				<img src='slike/gluha_soba000.jpg' alt='Obisk gluhe sobe 1'>
+				<img src='slike/gluha_soba003.jpg' alt='Obisk gluhe sobe 2'>
+
+			</div>
+		V programu smo kasneje primerjali podatke dejanske meritve obeh s podatki, ki jih dobimo, če seštejemo posamezni meritvi.
+		Izkaže se, da podatki ne sovpadajo. To nas je presenetilo, zato smo raziskovali naprej.
+		Ugotovili smo, da obstaja t.i. akustični zamik.<br> <img src='slike/wiki.jpg'><br> Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok
+		"rodi". Z analizo podatkov smo ugotovili, da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega
+		zamaknjen za 24 mm (konkretno za zvočnika <u>P21RE4X/DC</u> in <u>27TFFD</u>). Pomagali smo si s programom VituixCAD.
+		<div class="picture">
+			<img src='slike/time_alignment000.png' alt='akustični zamik 1'>
+			<img src='slike/time_alignment001.png' alt='akustični zamik 2'>
+		</div>
+		<br><br>
+			<a href='slike/time_alignment000.png' target='_blank'>Akustični zamik 1</a>
+			<a href='slike/time_alignment001.png' target='_blank'>Akustični zamik 2</a>
+		<br><br>
+
+		</div>
 	</div>
 
-	<footer class="footer">
-		<div>
-		
-			<div class="column">
-				<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"><br>
+	<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
+		<div class="row">
+			<div class="col-sm">
+				<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.seas.no/"><img src="seas.jpg" alt="SEAS" class="footer-img"><br>
+			<div class="col-sm">
+				<a href="http://www.seas.no/"><img src="slike/seas.jpg" alt="SEAS" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"><br>
+			<div class="col-sm">
+				<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="http://www.fe.uni-lj.si/en/"><img src="UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="https://www.fmf.uni-lj.si/en/"><img src="FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"><br>
-			</div>
-			
 		</div>
-		<div>
-			<br><br><br><br><br><br><br>
-			<a href="http://gimvic.org">
-			&copy; 2019 Gimnazija Vič
-			</a>
+		<div class="row">
+			<div class="col-sm">
+				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="http://www.fe.uni-lj.si/en/"><img src="slike/UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="https://www.fmf.uni-lj.si/en/"><img src="slike/FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"></a>
+			</div>
 		</div>
-	</footer>
 
+		<div class="row">
+			<div class="col-sm" style="padding-top: 3vh">
+				<a href="http://gimvic.org" class="footer" style="color: white;">
+					&copy; 2019 Gimnazija Vič
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

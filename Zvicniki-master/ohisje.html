@@ -9,78 +9,113 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 
-	<title>Zvičniki</title>
+	<title>ZVičNIKI</title>
 </head>
 
 <body class="main">
 
 	<div class="jumbotron text-center" style="margin-bottom:0;">
-		<h1>Predstavitev projekta Zvičniki</h1>
-		<p>Izdelava Hi-Fi zvočnikov</p> 
+		<h1>Predstavitev projekta ZVičNIKI</h1>
+		<p>Izdelava Hi-Fi zvočnikov</p>
 	</div>
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<a class="navbar-brand" href="">Zvičniki</a>
+		<a class="navbar-brand" href="home.html">ZVičNIKI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<div class="navbar-nav">
 				<div class="nav-item">
-					<a class="nav-link" href="home.html">Domov</a>
+					<a class="nav-link" href="home.html">Uvod</a>
+				</div>
+				<div class="nav-item">
+					<a class="nav-link" href="teoreticneosnove.html">Teoretične osnove</a>
 				</div>
 				<div class="nav-item">
 					<a class="nav-link" href="meritve.html">Meritve</a>
 				</div>
 				<div class="nav-item-active">
-					<a class="nav-link nav-link-active" href="ohisje.html">Ohišje</a>
+					<a class="nav-link-active nav-link" href="ohisje.html">Ohišje</a>
 				</div>
 				<div class="nav-item">
 					<a class="nav-link" href="kretnica.html">Kretnica</a>
-				</div>       
+				</div>
 			</div>
-		</div>  
+		</div>
 	</nav>
 
 	<div class="container-fluid content">
 		<h2 style="margin-top: 1vw">Izdelava ohišja</h2>
-		<p>Tukaj bo opis postopka izdelave ohišja.</p> 
+
+			<br><br>
+			Na podlagi pridobljenih TS parametrov smo določili primerno prostornino zvočnika/škatle. Za ta korak smo
+			uporabili prostodostopen program WinISD. Program izračuna prostornino, pri kateri bi bil frekvenčni odziv škatle
+			pri vseh frekvencah čimbolj podoben.
+			<br><br>
+			Ker imamo nekaterih zvočnikov več kot drugih, smo se odločili, da najprej poskusimo z izdelavo dvosistemskega
+			zvočnika z uporabo nizkotonskega zvočnika <u>P21RE4X/DC</u> in visokotonskega zvočnika <u>27TFFD</u>.
+			Program WinISD je za zvočnik <u>P21RE4X/DC</u> predlagal prostornino približno 50 litrov pri frekvenci "bass reflexa" približno 36 Hz.
+			V praksi se ne moremo zanašati izključno na izračune - v izračunih npr. ni upoštevana " hitrost odziva nizkotonskega zvočnika"
+			Pri tako velikih prostorninah se lahko zgodi, da bass zvočnik ni dovolj odziven. Pri npr. hitrem tempu glasbe
+			ne zmore slediti, rezultat pa je "razmazan zvok", pri katerem ne ločimo posameznih not med seboj (npr. hiter tempo
+			bas kitare).
+			<br><br>
+			Zato smo se odločili, da poskusimo z izdelavo treh zvočnikov z različnimi prostorninami in sicer 20 litrov,
+			30 litrov in 40 litrov. Za te prostorine se izračunani frekvenčni odzivi še vedno precej "lepi" (MANJKAJOCE SLIKE).
+			<br><br>
+			Izdelali smo 3 škatle in poslušali samo nizkotonske zvočnike, brez kretnice. Zvok je iz vseh treh zvočnikov nenavaden,
+			saj manjkajo vse visoke frekvence, nizkotonski zvočnik ne zmore predvajati vseh frekvenc. Ker pa od zvočnika zahtevamo preveč,
+			nenavadno zvenijo celo nizke frekvence.
+			<br><br>
+			Nato smo ponovno izvedli meritve impedance in frekvenčne meritve v gluhi sobi Fakultete za elektrotehniko, tokrat za vse tri škatle in potrdili smo naša pričakovanja - večja prostorina, več nizkih frekvenc dobimo. Poleg tega pa smo ugotovili še, kako škatla s cevjo vpliva na impedanco zvočnika. Ugotovimo lahko, da se vrh impedance razdeli med dva nova vrhova. Minimum med novima dvema vrhovoma ustreza frekvenci "bass reflexa".
+			<br><br>
+			Nato smo se odločili, da meritve ponovimo še enkrat, tokrat z uporabo dveh tuljav na zvočniku <u>P21RE4X/DC</u>. Oznaka DC
+			namreč pomeni, da ima zvočnik dve tuljavi, lahko uporabljamo samo eno, lahko pa dve, vezani bodisi zaporedno bodisi
+			vzporedno, kar se pozna pri impedanci.
+			<br><br>
+			Na podlagi meritev smo se odločili, da pripravimo nov prototip škatle, ki bo upošteval t.i. akustični zamik. Izmerili smo, da bi moral biti nizkotonski zvočnik premaknjen naprej za 24 mm glede na visokotonski zvočnik. Odločili smo se za stopničasto sprednjo ploščo, saj je tako najlažje nizkotonski zvočnik premakniti naprej. Narisali smo 3D model novega zvočnika - dobili smo nekaj novih dizajnov, ki jih bomo preizkusili. Poleg tega smo se odločili, da bomo nov zvočnik izdelali malce drugače, zato smo s šolskim 3D tiskalnikom zdelali kotnike izključno za lažjo sestavo novega zvočnika, notranje ojačitve pa smo izdelali s šolskim CNC rezkarjem.
+			<br><br>
+			<b>Prototip 2 je izdelan</b><br>
+			V šolski delavnici smo pomerili impedančni odziv. Pri prejšnjih meritvah smo se naučili, da bass reflex cev impedančni vrh razdeli na dva, minimum ustreza frekvenci bass reflex cevi. Novi prototip smo tako "uglasili" na frekvenco, pri kateri sta oba vrha simetrična.
+		</div>
 	</div>
 
-	<footer class="footer">
-		<div>
-		
-			<div class="column">
-				<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"><br>
+	<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
+		<div class="row">
+			<div class="col-sm">
+				<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.seas.no/"><img src="seas.jpg" alt="SEAS" class="footer-img"><br>
+			<div class="col-sm">
+				<a href="http://www.seas.no/"><img src="slike/seas.jpg" alt="SEAS" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"><br>
+			<div class="col-sm">
+				<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"></a>
 			</div>
-			<div class="column">
-				<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="http://www.fe.uni-lj.si/en/"><img src="UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"><br>
-			</div>
-			<div class="column">
-				<a href="https://www.fmf.uni-lj.si/en/"><img src="FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"><br>
-			</div>
-			
 		</div>
-		<div>
-			<br><br><br><br><br><br><br>
-			<a href="http://gimvic.org">
-			&copy; 2019 Gimnazija Vič
-			</a>
+		<div class="row">
+			<div class="col-sm">
+				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="http://www.fe.uni-lj.si/en/"><img src="slike/UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"></a>
+			</div>
+			<div class="col-sm">
+				<a href="https://www.fmf.uni-lj.si/en/"><img src="slike/FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"></a>
+			</div>
 		</div>
-	</footer>
 
+		<div class="row">
+			<div class="col-sm" style="padding-top: 3vh">
+				<a href="http://gimvic.org" class="footer" style="color: white;">
+					&copy; 2019 Gimnazija Vič
+				</a>
+			</div>
+		</div>
+	</div>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
