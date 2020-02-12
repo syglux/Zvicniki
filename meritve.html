@@ -9,31 +9,31 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 
-	<title>Zvičniki</title>
+	<title>ZVičNIKI</title>
 </head>
 
 <body class="main">
 
 	<div class="jumbotron text-center" style="margin-bottom:0;">
-		<h1>Predstavitev projekta Zvičniki</h1>
+		<h1>Predstavitev projekta ZVičNIKI</h1>
 		<p>Izdelava Hi-Fi zvočnikov</p>
 	</div>
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<a class="navbar-brand" href="home.html">Zvičniki</a>
+		<a class="navbar-brand" href="home.html">ZVičNIKI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<div class="navbar-nav">
 				<div class="nav-item">
-					<a class="nav-link" href="home.html">Domov</a>
+					<a class="nav-link" href="home.html">Uvod</a>
 				</div>
 				<div class="nav-item">
 					<a class="nav-link" href="teoreticneosnove.html">Teoretične osnove</a>
 				</div>
 				<div class="nav-item-active">
-					<a class="nav-link nav-link-active" href="meritve.html">Meritve</a>
+					<a class="nav-link-active nav-link" href="meritve.html">Meritve</a>
 				</div>
 				<div class="nav-item">
 					<a class="nav-link" href="ohisje.html">Ohišje</a>
@@ -57,13 +57,9 @@
 		Na spletni strani programa (<a href='https://www.roomeqwizard.com'>www.roomeqwizard.com/</a>) je jasno opisan postopek meritve
 		impedance (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/impedancemeasurement.html#top'>www.roomeqwizard.com/</a>) in
 		izračuna TS parametrov (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/thielesmall.html#top'>www.roomeqwizard.com/</a>)
-		<br><br>
-		Izvedli smo več meritev - frekvenčni odziv samo nizkotonskega zvočnika, frekvenčni odziv samo visokotonskega zvočnika
-		in frekvenčni odziv obeh zvočnikov skupaj, <u>brez</u> kretnice.
 			<div>
-			
-				Za vse zvočnike, ki smo jih prejeli, smo opravili meritve impedance v gluhi sobi Fakultete za elektrotehniko UL in tako izračunali TS parametre za vse zvočnike.
-				Rezultati naših meritev so zbrani v tabeli spodaj.
+			Za vse zvočnike, ki smo jih prejeli, smo opravili meritve impedance v gluhi sobi Fakultete za elektrotehniko
+			UL in tako izračunali TS parametre za vse zvočnike. Rezultati naših meritev so zbrani v tabeli spodaj.
 			<h2>TS parametri</h2>
 			<table>
 			  <tr>
@@ -113,24 +109,21 @@
 				<img src='slike/gluha_soba003.jpg' alt='Obisk gluhe sobe 2'>
 
 			</div>
-			Izvedli smo tudi frekvenčne meritve za zvočnika SEAS P21RE4X/DC in SEAS 27TFFD. Izmerili smo odziv samo nizkotonskega zvočnika, 
-			odziv samo visokotonskega zvočnika in odziv obeh zvočnikov skupaj. V programu smo kasneje primerjali odziv obeh zvočnikov skupaj 
-			z vsoto odzivov posameznih zvočnikov (odzivu nizkotonskega smo računsko prišteli odziv visokotonskega zvočnika). 
-			Izkaže se, da se izmerjeni skupni odziv z izračunanim na ujema. To nas je presenetilo, zato smo raziskovali naprej. 
-			Ugotovili smo, da obstaja t.i. akustični zamik.
-			<br> <img src='slike/wiki.jpg'><br> 
-			Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok "rodi". Z analizo podatkov smo ugotovili, 
-			da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega zamaknjen za 24 mm (konkretno za zvočnika P21RE4X/DC in 27TFFD). 
-			Pomagali smo si s programom VituixCAD.
+		V programu smo kasneje primerjali podatke dejanske meritve obeh s podatki, ki jih dobimo, če seštejemo posamezni meritvi.
+		Izkaže se, da podatki ne sovpadajo. To nas je presenetilo, zato smo raziskovali naprej.
+		Ugotovili smo, da obstaja t.i. akustični zamik.<br> <img src='slike/wiki.jpg'><br> Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok
+		"rodi". Z analizo podatkov smo ugotovili, da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega
+		zamaknjen za 24 mm (konkretno za zvočnika <u>P21RE4X/DC</u> in <u>27TFFD</u>). Pomagali smo si s programom VituixCAD.
 		<div class="picture">
 			<img src='slike/time_alignment000.png' alt='akustični zamik 1'>
 			<img src='slike/time_alignment001.png' alt='akustični zamik 2'>
 		</div>
 		<br><br>
-		dodati vir slik
+			<a href='slike/time_alignment000.png' target='_blank'>Akustični zamik 1</a>
+			<a href='slike/time_alignment001.png' target='_blank'>Akustični zamik 2</a>
 		<br><br>
-		
-	</div>
+
+		</div>
 	</div>
 
 	<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
