@@ -55,6 +55,9 @@
 				<div class="picture">
 					<img src='slike/impedanca_primer1.jpg' alt='meritev impedance'>
 				</div>
+				<div class="graf">
+					<canvas id="imp"></canvas>
+				</div>
 				<h3>TS parametri</h3>
 				<table>
 					<tr>
@@ -322,6 +325,7 @@
 <!-- Optional JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 <script src="data/bass.js"></script>
+<script src="data/imp.js"></script>
 <script src="data/bass_imp copy.js"></script>
 <script src="data/tweeter.js"></script>
 <script src="data/tweeter_imp copy.js"></script>
@@ -1444,6 +1448,94 @@
 					ticks: {
 						min: 0,
 						max: 8,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- imp primer-->
+<script>
+	var ctx = document.getElementById('imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - woofer',
+				data: imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'bass  imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 50,
 					}
 				},
 				{ 
