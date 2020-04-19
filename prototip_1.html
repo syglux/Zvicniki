@@ -36,9 +36,9 @@
 		</div>
 	</nav>
 
-		<div class="container-fluid content">
-			<h2 style="margin-top: 1vw">Izvajanje meritev</h2>
-			<div>
+	<div class="container-fluid content">
+		<h2 style="margin-top: 1vw">Izvajanje meritev</h2>
+		<div>
 			Ugotovili smo, da za izdelavo zvočnika potrebujemo natančno analizo zvočnikov, ki jih bomo vgradili v škatlo.
 			Pri tem nam je pomagal <i>dr. Samo Beguš</i> s Fakultete za elektrotehniko Univerze v Ljubljani. Odločili smo se, da
 			si bomo pomagali s prostodostopnim programom <a href='https://www.roomeqwizard.com/'>Room EQ Wizard</a>. Podatki, s katerimi opišemo vsak zvočnik, se imenujejo
@@ -48,7 +48,7 @@
 			Na spletni strani programa (<a href='https://www.roomeqwizard.com'>www.roomeqwizard.com/</a>) je jasno opisan postopek meritve
 			impedance (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/impedancemeasurement.html#top'>www.roomeqwizard.com/</a>) in
 			izračuna TS parametrov (<a href='https://www.roomeqwizard.com/help/help_en-GB/html/thielesmall.html#top'>www.roomeqwizard.com/</a>)
-				<div>
+			<div>
 				Za vse zvočnike, ki smo jih prejeli, smo opravili meritve impedance v gluhi sobi Fakultete za elektrotehniko
 				UL in tako izračunali TS parametre za vse zvočnike. Rezultati naših meritev so zbrani v tabeli spodaj.
 				<h3>Primer meritve impedance</h3><br>
@@ -57,38 +57,38 @@
 				</div>
 				<h3>TS parametri</h3>
 				<table>
-				  <tr>
-				    <th>Podjetje</th>
-				    <th>Model</th>
-				  </tr>
-				  <tr>
-				    <td>ScanSpeak</td>
-				    <td><a href='ts_parametri/scanspeakR2604.txt' download='scanspeakR2604.txt'>R2604/8320000</a></td>
-				  </tr>
 					<tr>
-				    <td>ScanSpeak</td>
-				    <td><a href='ts_parametri/scanspeak10F.txt' download='scanspeak10F.txt'>10F/8414G10</a></td>
-				  </tr>
+						<th>Podjetje</th>
+						<th>Model</th>
+					</tr>
 					<tr>
-				    <td>ScanSpeak</td>
-				    <td><a href='ts_parametri/scanspeak18w_b.txt' download='scanspeak18w.txt'>18W/8434G00</a></td>
-				  </tr>
+						<td>ScanSpeak</td>
+						<td><a href='ts_parametri/scanspeakR2604.txt' download='scanspeakR2604.txt'>R2604/8320000</a></td>
+					</tr>
 					<tr>
-				    <td>ScanSpeak</td>
-				    <td><a href='ts_parametri/scanspeak22w.txt' download='scanspeak22w.txt'>22W/8534G00</a></td>
-				  </tr>
+						<td>ScanSpeak</td>
+						<td><a href='ts_parametri/scanspeak10F.txt' download='scanspeak10F.txt'>10F/8414G10</a></td>
+					</tr>
 					<tr>
-				    <td>SEAS</td>
-				    <td><a href='ts_parametri/' download=''>H0978-06 27TFFD</a></td>
-				  </tr>
+						<td>ScanSpeak</td>
+						<td><a href='ts_parametri/scanspeak18w_b.txt' download='scanspeak18w.txt'>18W/8434G00</a></td>
+					</tr>
 					<tr>
-				    <td>SEAS</td>
-				    <td><a href='ts_parametri/seasp21_dual_coil.txt' download='seasp21_dual_coil.txt'>H0442-08 P21RE4X/DC</a></td>
-				  </tr>
+						<td>ScanSpeak</td>
+						<td><a href='ts_parametri/scanspeak22w.txt' download='scanspeak22w.txt'>22W/8534G00</a></td>
+					</tr>
 					<tr>
-				    <td>SEAS</td>
-				    <td><a href='ts_parametri/seas W15CY.txt' download='seas W15CY.txt'>H1291-08 W15CY/TV-NHT</a></td>
-				  </tr>
+						<td>SEAS</td>
+						<td><a href='ts_parametri/' download=''>H0978-06 27TFFD</a></td>
+					</tr>
+					<tr>
+						<td>SEAS</td>
+						<td><a href='ts_parametri/seasp21_dual_coil.txt' download='seasp21_dual_coil.txt'>H0442-08 P21RE4X/DC</a></td>
+					</tr>
+					<tr>
+						<td>SEAS</td>
+						<td><a href='ts_parametri/seas W15CY.txt' download='seas W15CY.txt'>H1291-08 W15CY/TV-NHT</a></td>
+					</tr>
 				</table>
 
 				<div class="picture8">
@@ -103,6 +103,9 @@
 				<div class="picture">
 					<img src='slike/impedanca_primer.jpg' alt='meritev impedance'>
 				</div>
+				<div class="graf">
+					<canvas id="bass_imp"></canvas>
+				</div>
 				<br><br>
 				Pri frekvenčnih meritvah smo izmerili najprej odziva posameznih zvočnikov (samo nizkotonskega zvočnika in samo visokotonskega zvočnika), nato pa še odziv obeh zvočnikov
 				skupaj.
@@ -110,17 +113,23 @@
 				visokotonskega zvočnika). Izkaže se, da se izmerjeni skupni odziv z izračunanim na ujema. Se pa ujema, če nizkotonski zvočnik pomaknemo naprej - virtualni premik
 				smo naredili v programu VituixCad.
 				<div class="picture8">
-				<a href='slike/time_alignment001.png' target='_blank'><img src='slike/time_alignment001.png' alt='akustični zamik 2'></a>
-				<a href='slike/time_alignment000.png' target='_blank'><img src='slike/time_alignment000.png' alt='akustični zamik 1'></a>
-			</div>
-				<br><br>
+					<a href='slike/time_alignment001.png' target='_blank'><img src='slike/time_alignment001.png' alt='akustični zamik 2'></a>
+					<a href='slike/time_alignment000.png' target='_blank'><img src='slike/time_alignment000.png' alt='akustični zamik 1'></a>
+				</div>
+				<br>
+				<br>
 				To nas je presenetilo, zato smo raziskovali naprej.
-				Ugotovili smo, da obstaja t.i. akustični zamik.<br> <img src='slike/wiki.jpg'><br>
-			vir: https://en.wikipedia.org/wiki/Loudspeaker_time_alignment
-			<br><br>
-			Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok
-			"rodi". Z analizo podatkov smo ugotovili, da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega
-			zamaknjen za 24 mm (konkretno za zvočnika <u>P21RE4X/DC</u> in <u>27TFFD</u>). <br><br>
+				Ugotovili smo, da obstaja t.i. akustični zamik.
+				<br> 
+				<div class="picture">
+					<img src='slike/wiki.jpg'>
+				</div>
+				<br>
+				vir: <a href="https://en.wikipedia.org/wiki/Loudspeaker_time_alignment">https://en.wikipedia.org/wiki/Loudspeaker_time_alignment </a>
+				<br><br>
+				Gre za to, da ni povsem jasno, kje se pri vsakem zvočniku zvok
+				"rodi". Z analizo podatkov smo ugotovili, da je izvor zvoka pri nizkotonskem zvočniku glede na visokotonskega
+				zamaknjen za 24 mm (konkretno za zvočnika <u>P21RE4X/DC</u> in <u>27TFFD</u>). <br><br>
 
 
 			</div>
@@ -128,80 +137,83 @@
 		<div class="container-fluid content">
 			<h2 style="margin-top: 1vw">Izdelava ohišja</h2>
 
-				<br><br>
-				Na podlagi pridobljenih TS parametrov smo določili primerno prostornino zvočnika/škatle. Za ta korak smo
-				uporabili prostodostopen program WinISD. Program izračuna prostornino, pri kateri bi bil frekvenčni odziv škatle
-				pri vseh frekvencah čimbolj podoben.
-				<br><br>
-				Ker imamo nekaterih zvočnikov več kot drugih, smo se odločili, da najprej poskusimo z izdelavo dvosistemskega
-				zvočnika z uporabo nizkotonskega zvočnika <u>P21RE4X/DC</u> in visokotonskega zvočnika <u>27TFFD</u>.
-				Program WinISD je za zvočnik <u>P21RE4X/DC</u> predlagal prostornino približno 50 litrov pri frekvenci "bass reflexa" približno 36 Hz.
-				V praksi se ne moremo zanašati izključno na izračune - v izračunih npr. ni upoštevana " hitrost odziva nizkotonskega zvočnika"
-				Pri tako velikih prostorninah se lahko zgodi, da bass zvočnik ni dovolj odziven. Pri npr. hitrem tempu glasbe
-				ne zmore slediti, rezultat pa je "razmazan zvok", pri katerem ne ločimo posameznih not med seboj (npr. hiter tempo
-				bas kitare).
-				<br><br>
-				Zato smo se odločili, da poskusimo z izdelavo treh zvočnikov z različnimi prostorninami in sicer 20 litrov,
-				30 litrov in 40 litrov. Za te prostorine se izračunani frekvenčni odzivi še vedno precej "lepi"
-				<div class='picture5'>
-					<img src='slike/Volumen 20L.png' alt='Volumen 20L'>
-				</div>
-				<div class='picture5'>
-					<img src='slike/Volumen 30L.png' alt='Volumen 30L'>
-				</div>
-				<div class='picture5'>
-					<img src='slike/Volumen 40L.png' alt='Volumen 40L'>
-				</div>
-				<br>
-				Izdelali smo 3 škatle in poslušali samo nizkotonske zvočnike, brez kretnice. Zvok je iz vseh treh zvočnikov nenavaden,
-				saj manjkajo vse visoke frekvence, nizkotonski zvočnik ne zmore predvajati vseh frekvenc. Ker pa od zvočnika zahtevamo preveč,
-				nenavadno zvenijo celo nizke frekvence.
-				<br><br>
-				<div class='picture'>
-					<img src='slike/3skatle.jpg' alt='trije zvočniki'>
-				</div>
-				<br><br>
-				Nato smo ponovno izvedli meritve impedance in frekvenčne meritve v gluhi sobi Fakultete za elektrotehniko, tokrat za vse tri škatle in potrdili
-				smo naša pričakovanja - večja prostorina, več nizkih frekvenc dobimo. Poleg tega pa smo ugotovili še, kako škatla s cevjo vpliva na impedanco zvočnika.
-				Ugotovimo lahko, da se vrh impedance razdeli med dva nova vrhova. Minimum med novima dvema vrhovoma ustreza frekvenci "bass reflexa". Več o tem na zavihku <a href='meritve.html'>Meritve</a>.
-				<br><br>
-				Nato smo se odločili, da meritve ponovimo še enkrat, tokrat z uporabo dveh tuljav na zvočniku <u>P21RE4X/DC</u>. Oznaka DC
-				namreč pomeni, da ima zvočnik dve tuljavi, lahko uporabljamo samo eno, lahko pa dve, vezani bodisi zaporedno bodisi
-				vzporedno, kar se pozna pri impedanci.
-				<br><br>
-				Na podlagi meritev smo se odločili, da pripravimo nov prototip škatle, ki bo upošteval t.i. akustični zamik. Izmerili smo, da bi moral biti nizkotonski
-				zvočnik premaknjen naprej za 24 mm glede na visokotonski zvočnik. Odločili smo se za stopničasto sprednjo ploščo, saj je tako najlažje nizkotonski zvočnik
-				premakniti naprej. Narisali smo 3D model novega zvočnika - dobili smo nekaj novih dizajnov, ki jih bomo preizkusili. Poleg tega smo se odločili, da bomo nov
-				zvočnik izdelali malce drugače, zato smo s šolskim 3D tiskalnikom zdelali kotnike izključno za lažjo sestavo novega zvočnika, notranje ojačitve pa smo
-				izdelali s šolskim CNC rezkarjem.
-				<div class='picture6'>
-					<img src='slike/model.png' alt='Model'>
-				</div>
-				<div class='picture6'>
-					<img src='slike/rezkar3.jpg' alt='Rezkar'>
-				</div>
-				<br><br>
-				<b>Prototip 2 je izdelan.</b><br>
-				Novi prototip ima stopničasto sprednjo ploščo, ki omogoča boljši fazni odziv.
-				<div class='picture'>
-					<img src='slike/prototip2.jpg' alt='impedanca'>
-				</div>
-				<br><br>
-				V šolski delavnici smo pomerili impedančni odziv. Pri prejšnjih meritvah smo se naučili, da bass reflex cev impedančni vrh razdeli na dva, minimum
-				ustreza frekvenci bass reflex cevi. Novi prototip smo tako "uglasili" na frekvenco, pri kateri sta oba vrha simetrična. Rdeča krivulja prikazuje impedanco (leva os), zelena
-				pa fazni zamik (desna os).
-				 <br>Meritev je precej slaba (šum), saj so
-				pogoje za meritev v delavnici slabi. Meritve bomo ponovili v gluhi sobi Fakultete za elektrotehniko Univerze v Ljubljani.<br><br>
-				<div class='picture'>
-					<img src='slike/impedanca_prototip2_delavnica.jpg' alt='impedanca'>
-				</div>
-				<br><br>
+			<br><br>
+			Na podlagi pridobljenih TS parametrov smo določili primerno prostornino zvočnika/škatle. Za ta korak smo
+			uporabili prostodostopen program WinISD. Program izračuna prostornino, pri kateri bi bil frekvenčni odziv škatle
+			pri vseh frekvencah čimbolj podoben.
+			<br><br>
+			Ker imamo nekaterih zvočnikov več kot drugih, smo se odločili, da najprej poskusimo z izdelavo dvosistemskega
+			zvočnika z uporabo nizkotonskega zvočnika <u>P21RE4X/DC</u> in visokotonskega zvočnika <u>27TFFD</u>.
+			Program WinISD je za zvočnik <u>P21RE4X/DC</u> predlagal prostornino približno 50 litrov pri frekvenci "bass reflexa" približno 36 Hz.
+			V praksi se ne moremo zanašati izključno na izračune - v izračunih npr. ni upoštevana " hitrost odziva nizkotonskega zvočnika"
+			Pri tako velikih prostorninah se lahko zgodi, da bass zvočnik ni dovolj odziven. Pri npr. hitrem tempu glasbe
+			ne zmore slediti, rezultat pa je "razmazan zvok", pri katerem ne ločimo posameznih not med seboj (npr. hiter tempo
+			bas kitare).
+			<br><br>
+			Zato smo se odločili, da poskusimo z izdelavo treh zvočnikov z različnimi prostorninami in sicer 20 litrov,
+			30 litrov in 40 litrov. Za te prostorine se izračunani frekvenčni odzivi še vedno precej "lepi"
+			<div class='picture5'>
+				<img src='slike/Volumen 20L.png' alt='Volumen 20L'>
 			</div>
+			<div class='picture5'>
+				<img src='slike/Volumen 30L.png' alt='Volumen 30L'>
+			</div>
+			<div class='picture5'>
+				<img src='slike/Volumen 40L.png' alt='Volumen 40L'>
+			</div>
+			<br>
+			Izdelali smo 3 škatle in poslušali samo nizkotonske zvočnike, brez kretnice. Zvok je iz vseh treh zvočnikov nenavaden,
+			saj manjkajo vse visoke frekvence, nizkotonski zvočnik ne zmore predvajati vseh frekvenc. Ker pa od zvočnika zahtevamo preveč,
+			nenavadno zvenijo celo nizke frekvence.
+			<br><br>
+			<div class='picture'>
+				<img src='slike/3skatle.jpg' alt='trije zvočniki'>
+			</div>
+			<br><br>
+			Nato smo ponovno izvedli meritve impedance in frekvenčne meritve v gluhi sobi Fakultete za elektrotehniko, tokrat za vse tri škatle in potrdili
+			smo naša pričakovanja - večja prostorina, več nizkih frekvenc dobimo. Poleg tega pa smo ugotovili še, kako škatla s cevjo vpliva na impedanco zvočnika.
+			Ugotovimo lahko, da se vrh impedance razdeli med dva nova vrhova. Minimum med novima dvema vrhovoma ustreza frekvenci "bass reflexa". Več o tem na zavihku <a href='meritve.html'>Meritve</a>.
+			<br><br>
+			Nato smo se odločili, da meritve ponovimo še enkrat, tokrat z uporabo dveh tuljav na zvočniku <u>P21RE4X/DC</u>. Oznaka DC
+			namreč pomeni, da ima zvočnik dve tuljavi, lahko uporabljamo samo eno, lahko pa dve, vezani bodisi zaporedno bodisi
+			vzporedno, kar se pozna pri impedanci.
+			<br><br>
+			Na podlagi meritev smo se odločili, da pripravimo nov prototip škatle, ki bo upošteval t.i. akustični zamik. Izmerili smo, da bi moral biti nizkotonski
+			zvočnik premaknjen naprej za 24 mm glede na visokotonski zvočnik. Odločili smo se za stopničasto sprednjo ploščo, saj je tako najlažje nizkotonski zvočnik
+			premakniti naprej. Narisali smo 3D model novega zvočnika - dobili smo nekaj novih dizajnov, ki jih bomo preizkusili. Poleg tega smo se odločili, da bomo nov
+			zvočnik izdelali malce drugače, zato smo s šolskim 3D tiskalnikom zdelali kotnike izključno za lažjo sestavo novega zvočnika, notranje ojačitve pa smo
+			izdelali s šolskim CNC rezkarjem.
+			<div class='picture6'>
+				<img src='slike/model.png' alt='Model'>
+			</div>
+			<div class='picture6'>
+				<img src='slike/rezkar3.jpg' alt='Rezkar'>
+			</div>
+			<br><br>
+			<b>Prototip 2 je izdelan.</b><br>
+			Novi prototip ima stopničasto sprednjo ploščo, ki omogoča boljši fazni odziv.
+			<div class='picture'>
+				<img src='slike/prototip2.jpg' alt='impedanca'>
+			</div>
+			<br><br>
+			V šolski delavnici smo pomerili impedančni odziv. Pri prejšnjih meritvah smo se naučili, da bass reflex cev impedančni vrh razdeli na dva, minimum
+			ustreza frekvenci bass reflex cevi. Novi prototip smo tako "uglasili" na frekvenco, pri kateri sta oba vrha simetrična. Rdeča krivulja prikazuje impedanco (leva os), zelena
+			pa fazni zamik (desna os).
+			<br>Meritev je precej slaba (šum), saj so
+			pogoje za meritev v delavnici slabi. Meritve bomo ponovili v gluhi sobi Fakultete za elektrotehniko Univerze v Ljubljani.<br><br>
+			<div class='picture'>
+				<img src='slike/impedanca_prototip2_delavnica.jpg' alt='impedanca'>
+			</div>
+			<div class="graf">
+				<canvas id="bass_II_imp"></canvas>
+			</div>
+			<br><br>
 		</div>
+	</div>
 
-		<div class="container-fluid content">
-			<h2 style="margin-top: 1vw">Izdelava kretnice</h2>
-			<p>
+	<div class="container-fluid content">
+		<h2 style="margin-top: 1vw">Izdelava kretnice</h2>
+		<p>
 			Želeli smo narediti korak naprej tudi na področju snovanja kretnic. Odločili smo se, da bomo uporabili
 			še en prostodostopen program <a href='https://kimmosaunisto.net/Software/Software.html'>VituixCAD</a>, ki omogoča simuliranje kretnic na podlagi naših meritev. Tako smo ustvarili
 			nekaj različnih kretnic. Odločili smo se, da izdelamo tisto, ki je predvidevala najlepši frekvenčni odziv.
@@ -231,51 +243,1246 @@
 			Prav tako pa bomo ponovili meritve impedance in frekvenčne meritve za prototip 2.
 
 			<br><br>
-			</p>
+		</p>
+		<div class="graf">
+			<canvas id="bass"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="both"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="both_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="both_kretnica"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="bass_II"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_II"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_II_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="both_II"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="both_II_imp"></canvas>
 		</div>
 
+
+
+
+</div>
+<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
+	<div class="row">
+		<div class="col-sm">
+			<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"></a>
+		</div>
+		<div class="col-sm">
+			<a href="http://www.seas.no/"><img src="slike/seas.jpg" alt="SEAS" class="footer-img"></a>
+		</div>
+		<div class="col-sm">
+			<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"></a>
+		</div>
 	</div>
-	<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
-		<div class="row">
-			<div class="col-sm">
-				<a href="https://www.scan-speak.dk/"><img src="https://www.scan-speak.dk/wp-content/uploads/scan-speak-R1b.png" alt="Scan-Speak A/S" class="footer-img"></a>
-			</div>
-			<div class="col-sm">
-				<a href="http://www.seas.no/"><img src="slike/seas.jpg" alt="SEAS" class="footer-img"></a>
-			</div>
-			<div class="col-sm">
-				<a href="http://www.hi-fi.si"><img src="http://www.hi-fi.si/image/catalog/logo.png" alt="Video PC Center" class="footer-img"></a>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-sm">
-				<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"></a>
-			</div>
-			<div class="col-sm">
-				<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"></a>
-			</div>
-			<div class="col-sm">
-				<a href="http://www.fe.uni-lj.si/en/"><img src="slike/UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"></a>
-			</div>
-			<div class="col-sm">
-				<a href="https://www.fmf.uni-lj.si/en/"><img src="slike/FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"></a>
-			</div>
+	<div class="row">
+		<div class="col-sm">
+			<a href="http://gimvic.org/"><img src="http://gimvic.org/skin/img/gimvic-logo.png/" alt="Gimnazija Vič" class="footer-img"></a>
 		</div>
-
-		<div class="row">
-			<div class="col-sm" style="padding-top: 3vh">
-				<a href="http://gimvic.org" class="footer" style="color: white;">
-					&copy; 2019 Gimnazija Vič
-				</a>
-			</div>
+		<div class="col-sm">
+			<a href="http://www.jantzen-audio.com/"><img src="http://www.jantzen-audio.com//wp-content/uploads/2013/06/logo-jantzen-audio-white-395.png" alt="Jantzen audio" class="footer-img"></a>
+		</div>
+		<div class="col-sm">
+			<a href="http://www.fe.uni-lj.si/en/"><img src="slike/UNI-EL.jpg" alt="Univerza v Ljubljani - fakulteta za elektrotehniko" class="footer-img"></a>
+		</div>
+		<div class="col-sm">
+			<a href="https://www.fmf.uni-lj.si/en/"><img src="slike/FMF.jpg" alt="Univerza v Ljubljani - fakulteta za matematiko in fiziko" class="footer-img"></a>
 		</div>
 	</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<div class="row">
+		<div class="col-sm" style="padding-top: 3vh">
+			<a href="http://gimvic.org" class="footer" style="color: white;">
+				&copy; 2019 Gimnazija Vič
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- Optional JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="data/bass.js"></script>
+<script src="data/bass_imp copy.js"></script>
+<script src="data/tweeter.js"></script>
+<script src="data/tweeter_imp copy.js"></script>
+<script src="data/both.js"></script>
+<script src="data/both_imp.js"></script>
+<script src="data/bass_II.js"></script>
+<script src="data/bass_II_imp.js"></script>
+<script src="data/tweeter_II.js"></script>
+<script src="data/tweeter_II_imp.js"></script>
+<script src="data/both_kretnica.js"></script>
+<script src="data/both_II.js"></script>
+<script src="data/both_II_imp.js"></script>
+
+<!-- bass -->
+<script> 
+	var ctx = document.getElementById('bass');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: bass,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - woofer',
+				data: bass_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'bass'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -400,
+						max: 100,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- bass imp -->
+<script>
+	var ctx = document.getElementById('bass_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: bass_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - woofer',
+				data: bass_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'bass  imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 50,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter -->
+<script>
+	var ctx = document.getElementById('tweeter');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - tweeter',
+				data: tweeter,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - tweeter',
+				data: tweeter_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'tweeter'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -1500,
+						max: -800,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter imp -->
+<script>
+	var ctx = document.getElementById('tweeter_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'Impedanca - tweeter',
+				data: tweeter_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - tweeter',
+				data: tweeter_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			title: {
+					display: true,
+					text: 'tweeter imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "Impedanca [Ω]"
+					},
+					ticks: {
+						min: 0,
+						max: 20,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [°]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both imp -->
+<script>
+	var ctx = document.getElementById('both_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca',
+				data: both_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'faza',
+				data: both_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'both imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "Impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 10,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both -->
+<script>
+	var ctx = document.getElementById('both');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - both',
+				data: both,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - both',
+				data: both_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'both'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 50,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -360,
+						max: 360,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both kretnica -->
+<script>
+	var ctx = document.getElementById('both_kretnica');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - both kretnica',
+				data: both_kretnica,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - both kretnica',
+				data: both_kretnica_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'both kretnica'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 90,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -360,
+						max: 360,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- bass II -->
+<script>
+	var ctx = document.getElementById('bass_II');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: bass_II,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - woofer',
+				data: bass_II_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'bass II'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 90,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -360,
+						max: 360,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- bass II imp -->
+<script>
+	var ctx = document.getElementById('bass_II_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: bass_II_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - woofer',
+				data: bass_II_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'bass II imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 20,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter II -->
+<script>
+	var ctx = document.getElementById('tweeter_II');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: tweeter_II,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - woofer',
+				data: tweeter_II_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'tweeter II'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 50,
+						max: 90,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -360,
+						max: 360,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter II imp -->
+<script>
+	var ctx = document.getElementById('tweeter_II_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: tweeter_II_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - woofer',
+				data: tweeter_II_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'tweeter II imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 20,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both II -->
+<script>
+	var ctx = document.getElementById('both_II');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: both_II,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'Phase - woofer',
+				data: both_II_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'both II'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 90,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -360,
+						max: 360,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both II imp -->
+<script>
+	var ctx = document.getElementById('both_II_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: both_II_imp,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'Phase - woofer',
+				data: both_II_imp_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'both II imp'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 8,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
