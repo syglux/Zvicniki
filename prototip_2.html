@@ -69,6 +69,42 @@
 		<br><br>
 
 	</div>
+
+	<p>
+		<div class="graf">
+			<canvas id="woofer_spl"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="woofer_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_spl"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="skupaj_spl"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="skupaj_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="woofer_farfield_dvorana"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="woofer_nearfield_dvorana"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="port_dvorana"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="woofer_skupaj_dvorana"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_spl_dvorana"></canvas>
+		</div>
+	</p>
 	<div class="container-fluid" style="background-color: #343a40; color: white; text-align: center; width: 100%">
 		<div class="row">
 			<div class="col-sm">
@@ -105,6 +141,988 @@
 			</div>
 		</div>
 	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="data/spl_woofer_prototip2.js"></script>
+<script src="data/imp_woofer_prototip2.js"></script>
+<script src="data/spl_tweeter_prototip2.js"></script>
+<script src="data/imp_tweeter_prototip2.js"></script>
+<script src="data/spl_skupaj_prototip2.js"></script>
+<script src="data/imp_skupaj_prototip2.js"></script>
+<script src="data/woofer_farfield_prototip2_dvorana.js"></script>
+<script src="data/woofer_nearfield_prototip2_dvorana.js"></script>
+<script src="data/port_prototip2_dvorana.js"></script>
+<script src="data/woofer_joined_prototip2_dvorana.js"></script>
+<script src="data/tweeter_prototip2_dvorana.js"></script>
+
+<!-- bass -->
+<script> 
+	var ctx = document.getElementById('woofer_spl');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: spl_woofer_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - woofer',
+				data: spl_woofer_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Frekvenčni odziv wooferja'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- bass imp -->
+<script>
+	var ctx = document.getElementById('woofer_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'impedanca - woofer',
+				data: imp_woofer_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'faza - woofer',
+				data: imp_woofer_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Impedanca wooferja'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 40,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter -->
+<script>
+	var ctx = document.getElementById('tweeter_spl');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - tweeter',
+				data: spl_tweeter_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - tweeter',
+				data: spl_tweeter_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Frekvenčni odziv tweeterja'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter imp -->
+<script>
+	var ctx = document.getElementById('tweeter_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'Impedanca - tweeter',
+				data: imp_tweeter_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'faza - tweeter',
+				data: imp_tweeter_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			title: {
+					display: true,
+					text: 'Impedanca tweeterja'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "Impedanca [Ω]"
+					},
+					ticks: {
+						min: 0,
+						max: 16,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [°]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- skupaj -->
+<script>
+	var ctx = document.getElementById('skupaj_spl');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - skupaj',
+				data: spl_skupaj_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - skupaj',
+				data: spl_skupaj_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Frekvenčni odziv skupaj s kretnico'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 50,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- skupaj imp -->
+<script>
+	var ctx = document.getElementById('skupaj_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'Impedanca - skupaj',
+				data: imp_skupaj_prototip2,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'faza - skupaj',
+				data: imp_skupaj_prototip2_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Impedanca skupaj s kretnico'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'ohm',
+					scaleLabel: {
+						display: true,
+						labelString: "Impedanca [ohm]"
+					},
+					ticks: {
+						min: 0,
+						max: 7,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- woofer_farfield -->
+<script> 
+	var ctx = document.getElementById('woofer_farfield_dvorana');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer farfield',
+				data: woofer_farfield_prototip2_dvorana,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - woofer farfield',
+				data: woofer_farfield_prototip2_dvorana_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Farfield rekvenčni odziv wooferja v mali dvorani'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- woofer_nearfield -->
+<script> 
+	var ctx = document.getElementById('woofer_nearfield_dvorana');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer nearfield',
+				data: woofer_nearfield_prototip2_dvorana,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - woofer nearfield',
+				data: woofer_nearfield_prototip2_dvorana_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Nearfield frekvenčni odziv wooferja v mali dvorani'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -400,
+						max: 100,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- port -->
+<script> 
+	var ctx = document.getElementById('port_dvorana');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - port',
+				data: port_prototip2_dvorana,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - port',
+				data: port_prototip2_dvorana_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Frekvenčni odziv bass reflex porta v mali dvorani'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- woofer_skupaj -->
+<script> 
+	var ctx = document.getElementById('woofer_skupaj_dvorana');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: woofer_joined_prototip2_dvorana,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - woofer',
+				data: woofer_joined_prototip2_dvorana_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Združeni frekvenčni odzivi wooferja v mali dvorani - farfield + nearfield + port'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- tweeter_dvorana -->
+<script> 
+	var ctx = document.getElementById('tweeter_spl_dvorana');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'SPL - woofer',
+				data: tweeter_prototip2_dvorana,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'db'
+			},
+			{
+				label: 'faza - woofer',
+				data: tweeter_prototip2_dvorana_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Frekvenčni odziv tweeterja v mali dvorani'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 40,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

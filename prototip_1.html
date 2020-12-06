@@ -227,39 +227,24 @@
 			<br><br>
 		</p>
 		<div class="graf">
-			<canvas id="bass"></canvas>
+			<canvas id="woofer_spl"></canvas>
 		</div>
 		<div class="graf">
-			<canvas id="tweeter"></canvas>
+			<canvas id="woofer_imp"></canvas>
+		</div>
+		<div class="graf">
+			<canvas id="tweeter_spl"></canvas>
 		</div>
 		<div class="graf">
 			<canvas id="tweeter_imp"></canvas>
 		</div>
 		<div class="graf">
-			<canvas id="both"></canvas>
+			<canvas id="skupaj_spl"></canvas>
 		</div>
 		<div class="graf">
-			<canvas id="both_imp"></canvas>
+			<canvas id="skupaj_imp"></canvas>
 		</div>
-		<div class="graf">
-			<canvas id="both_kretnica"></canvas>
-		</div>
-		<div class="graf">
-			<canvas id="bass_II"></canvas>
-		</div>
-		<div class="graf">
-			<canvas id="tweeter_II"></canvas>
-		</div>
-		<div class="graf">
-			<canvas id="tweeter_II_imp"></canvas>
-		</div>
-		<div class="graf">
-			<canvas id="both_II"></canvas>
-		</div>
-		<div class="graf">
-			<canvas id="both_II_imp"></canvas>
-		</div>
-
+	
 
 
 
@@ -303,30 +288,23 @@
 
 <!-- Optional JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-<script src="data/bass.js"></script>
 <script src="data/imp.js"></script>
-<script src="data/bass_imp copy.js"></script>
-<script src="data/tweeter.js"></script>
-<script src="data/tweeter_imp copy.js"></script>
-<script src="data/both.js"></script>
-<script src="data/both_imp.js"></script>
-<script src="data/bass_II.js"></script>
-<script src="data/bass_II_imp.js"></script>
-<script src="data/tweeter_II.js"></script>
-<script src="data/tweeter_II_imp.js"></script>
-<script src="data/both_kretnica.js"></script>
-<script src="data/both_II.js"></script>
-<script src="data/both_II_imp.js"></script>
+<script src="data/spl_woofer_prototip1.js"></script>
+<script src="data/imp_woofer_prototip1.js"></script>
+<script src="data/spl_tweeter_prototip1.js"></script>
+<script src="data/imp_tweeter_prototip1.js"></script>
+<script src="data/spl_skupaj_prototip1.js"></script>
+<script src="data/imp_skupaj_prototip1.js"></script>
 
 <!-- bass -->
 <script> 
-	var ctx = document.getElementById('bass');
+	var ctx = document.getElementById('woofer_spl');
 	var scatterChart = new Chart(ctx, {
 		type: 'line',
 		data: {
 			datasets: [{
 				label: 'SPL - woofer',
-				data: bass,
+				data: spl_woofer_prototip1,
 				borderColor: 'rgba(0, 0, 255, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -338,8 +316,8 @@
 				yAxisID: 'db'
 			},
 			{
-				label: 'Phase - woofer',
-				data: bass_phase,
+				label: 'faza - woofer',
+				data: spl_woofer_prototip1_phase,
 				borderColor: 'rgba(255, 0, 0, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -356,7 +334,7 @@
 			responsive: true,
 			title: {
 					display: true,
-					text: 'bass'
+					text: 'Frekvenčni odziv wooferja'
 			},
 			scales: {
 				yAxes: [{ 
@@ -408,13 +386,13 @@
 </script>
 <!-- bass imp -->
 <script>
-	var ctx = document.getElementById('bass_imp');
+	var ctx = document.getElementById('woofer_imp');
 	var scatterChart = new Chart(ctx, {
 		type: 'line',
 		data: {
 			datasets: [{
 				label: 'impedanca - woofer',
-				data: bass_imp,
+				data: imp_woofer_prototip1,
 				borderColor: 'rgba(0, 0, 255, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -426,8 +404,8 @@
 				yAxisID: 'ohm'
 			},
 			{
-				label: 'Phase - woofer',
-				data: bass_imp_phase,
+				label: 'faza - woofer',
+				data: imp_woofer_prototip1_phase,
 				borderColor: 'rgba(255, 0, 0, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -444,7 +422,7 @@
 			responsive: true,
 			title: {
 					display: true,
-					text: 'bass  imp'
+					text: 'Impedanca wooferja'
 			},
 			scales: {
 				yAxes: [{ 
@@ -496,13 +474,13 @@
 </script>
 <!-- tweeter -->
 <script>
-	var ctx = document.getElementById('tweeter');
+	var ctx = document.getElementById('tweeter_spl');
 	var scatterChart = new Chart(ctx, {
 		type: 'line',
 		data: {
 			datasets: [{
 				label: 'SPL - tweeter',
-				data: tweeter,
+				data: spl_tweeter_prototip1,
 				borderColor: 'rgba(0, 0, 255, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -514,8 +492,8 @@
 				yAxisID: 'db'
 			},
 			{
-				label: 'Phase - tweeter',
-				data: tweeter_phase,
+				label: 'faza - tweeter',
+				data: spl_tweeter_prototip1_phase,
 				borderColor: 'rgba(255, 0, 0, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -532,7 +510,7 @@
 			responsive: true,
 			title: {
 					display: true,
-					text: 'tweeter'
+					text: 'Frekvenčni odziv tweeterja'
 			},
 			scales: {
 				yAxes: [{ 
@@ -590,7 +568,7 @@
 		data: {
 			datasets: [{
 				label: 'Impedanca - tweeter',
-				data: tweeter_imp,
+				data: imp_tweeter_prototip1,
 				borderColor: 'rgba(0, 0, 255, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -602,8 +580,8 @@
 				yAxisID: 'ohm'
 			},
 			{
-				label: 'Phase - tweeter',
-				data: tweeter_imp_phase,
+				label: 'faza - tweeter',
+				data: imp_tweeter_prototip1_phase,
 				borderColor: 'rgba(255, 0, 0, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -620,7 +598,7 @@
 			maintainAspectRatio: false,
 			title: {
 					display: true,
-					text: 'tweeter imp'
+					text: 'Impedanca tweeterja'
 			},
 			scales: {
 				yAxes: [{ 
@@ -634,7 +612,7 @@
 					},
 					ticks: {
 						min: 0,
-						max: 20,
+						max: 16,
 					}
 				},
 				{ 
@@ -670,15 +648,15 @@
 		}
 	});
 </script>
-<!-- both imp -->
+<!-- both -->
 <script>
-	var ctx = document.getElementById('both_imp');
+	var ctx = document.getElementById('skupaj_spl');
 	var scatterChart = new Chart(ctx, {
 		type: 'line',
 		data: {
 			datasets: [{
-				label: 'impedanca',
-				data: both_imp,
+				label: 'SPL - skupaj',
+				data: spl_skupaj_prototip1,
 				borderColor: 'rgba(0, 0, 255, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -687,11 +665,11 @@
 				pointBorderColor: 'rgba(0, 0, 255, 1)',
 				backgroundColor: 'rgba(0, 0, 255, 1)',
 				pointHoverRadius: 5,
-				yAxisID: 'ohm'
+				yAxisID: 'db'
 			},
 			{
-				label: 'faza',
-				data: both_imp_phase,
+				label: 'faza - skupaj',
+				data: spl_skupaj_prototip1_phase,
 				borderColor: 'rgba(255, 0, 0, 1)',
 				fill: false,
 				pointRadius: 0,
@@ -708,7 +686,95 @@
 			responsive: true,
 			title: {
 					display: true,
-					text: 'both imp'
+					text: 'Frekvenčni odziv skupaj brez kretnice'
+			},
+			scales: {
+				yAxes: [{ 
+					type: 'linear',
+					display: true,
+					position: 'left',
+					id: 'db',
+					scaleLabel: {
+						display: true,
+						labelString: "SPL [dB]"
+					},
+					ticks: {
+						min: 50,
+						max: 100,
+					}
+				},
+				{ 
+					type: 'linear',
+					display: true,
+					position: 'right',
+					id: 'deg',
+					scaleLabel: {
+						display: true,
+						labelString: "Phase [deg]"
+					},
+					ticks: {
+						min: -180,
+						max: 180,
+					}
+				}],
+				xAxes: [{ 
+					type: 'logarithmic',
+					position: 'bottom',
+					ticks: {
+						min: 20,
+						max: 20000,
+						callback: function(tick, index, ticks) {
+							return tick.toLocaleString()
+						}
+					},
+					scaleLabel: {
+						display: true,
+						labelString: "Frekvenca [Hz]"
+					}
+				}]
+			}
+		}
+	});
+</script>
+<!-- both imp -->
+<script>
+	var ctx = document.getElementById('skupaj_imp');
+	var scatterChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			datasets: [{
+				label: 'Impedanca - skupaj',
+				data: imp_skupaj_prototip1,
+				borderColor: 'rgba(0, 0, 255, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
+				pointBorderColor: 'rgba(0, 0, 255, 1)',
+				backgroundColor: 'rgba(0, 0, 255, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'ohm'
+			},
+			{
+				label: 'faza - skupaj',
+				data: imp_skupaj_prototip1_phase,
+				borderColor: 'rgba(255, 0, 0, 1)',
+				fill: false,
+				pointRadius: 0,
+				pointHitRadius: 3,
+				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
+				pointBorderColor: 'rgba(255, 0, 0, 1)',
+				backgroundColor: 'rgba(255, 0, 0, 1)',
+				pointHoverRadius: 5,
+				yAxisID: 'deg'
+			}]
+		},
+		options: {
+			maintainAspectRatio: false,
+			responsive: true,
+			title: {
+					display: true,
+					text: 'Impedanca skupaj brez kretnice'
 			},
 			scales: {
 				yAxes: [{ 
@@ -758,710 +824,8 @@
 		}
 	});
 </script>
-<!-- both -->
-<script>
-	var ctx = document.getElementById('both');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'SPL - both',
-				data: both,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'db'
-			},
-			{
-				label: 'Phase - both',
-				data: both_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'both'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'db',
-					scaleLabel: {
-						display: true,
-						labelString: "SPL [dB]"
-					},
-					ticks: {
-						min: 50,
-						max: 100,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -360,
-						max: 360,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- both kretnica -->
-<script>
-	var ctx = document.getElementById('both_kretnica');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'SPL - both kretnica',
-				data: both_kretnica,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'db'
-			},
-			{
-				label: 'Phase - both kretnica',
-				data: both_kretnica_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'both kretnica'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'db',
-					scaleLabel: {
-						display: true,
-						labelString: "SPL [dB]"
-					},
-					ticks: {
-						min: 40,
-						max: 90,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -360,
-						max: 360,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- bass II -->
-<script>
-	var ctx = document.getElementById('bass_II');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'SPL - woofer',
-				data: bass_II,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'db'
-			},
-			{
-				label: 'Phase - woofer',
-				data: bass_II_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'bass II'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'db',
-					scaleLabel: {
-						display: true,
-						labelString: "SPL [dB]"
-					},
-					ticks: {
-						min: 40,
-						max: 90,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -360,
-						max: 360,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- bass II imp -->
-<script>
-	var ctx = document.getElementById('bass_II_imp');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'impedanca - woofer',
-				data: bass_II_imp,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'ohm'
-			},
-			{
-				label: 'Phase - woofer',
-				data: bass_II_imp_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'bass II imp'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'ohm',
-					scaleLabel: {
-						display: true,
-						labelString: "impedanca [ohm]"
-					},
-					ticks: {
-						min: 0,
-						max: 20,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -180,
-						max: 180,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- tweeter II -->
-<script>
-	var ctx = document.getElementById('tweeter_II');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'SPL - woofer',
-				data: tweeter_II,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'db'
-			},
-			{
-				label: 'Phase - woofer',
-				data: tweeter_II_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'tweeter II'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'db',
-					scaleLabel: {
-						display: true,
-						labelString: "SPL [dB]"
-					},
-					ticks: {
-						min: 50,
-						max: 90,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -360,
-						max: 360,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- tweeter II imp -->
-<script>
-	var ctx = document.getElementById('tweeter_II_imp');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'impedanca - woofer',
-				data: tweeter_II_imp,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'ohm'
-			},
-			{
-				label: 'Phase - woofer',
-				data: tweeter_II_imp_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'tweeter II imp'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'ohm',
-					scaleLabel: {
-						display: true,
-						labelString: "impedanca [ohm]"
-					},
-					ticks: {
-						min: 0,
-						max: 20,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -180,
-						max: 180,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- both II -->
-<script>
-	var ctx = document.getElementById('both_II');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'SPL - woofer',
-				data: both_II,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'db'
-			},
-			{
-				label: 'Phase - woofer',
-				data: both_II_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'both II'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'db',
-					scaleLabel: {
-						display: true,
-						labelString: "SPL [dB]"
-					},
-					ticks: {
-						min: 40,
-						max: 90,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -360,
-						max: 360,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
-<!-- both II imp -->
-<script>
-	var ctx = document.getElementById('both_II_imp');
-	var scatterChart = new Chart(ctx, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'impedanca - woofer',
-				data: both_II_imp,
-				borderColor: 'rgba(0, 0, 255, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(0, 0, 255, 1)',
-				pointBorderColor: 'rgba(0, 0, 255, 1)',
-				backgroundColor: 'rgba(0, 0, 255, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'ohm'
-			},
-			{
-				label: 'Phase - woofer',
-				data: both_II_imp_phase,
-				borderColor: 'rgba(255, 0, 0, 1)',
-				fill: false,
-				pointRadius: 0,
-				pointHitRadius: 3,
-				pointBackgroundColor: 'rgba(255, 0, 0, 1)',
-				pointBorderColor: 'rgba(255, 0, 0, 1)',
-				backgroundColor: 'rgba(255, 0, 0, 1)',
-				pointHoverRadius: 5,
-				yAxisID: 'deg'
-			}]
-		},
-		options: {
-			maintainAspectRatio: false,
-			responsive: true,
-			title: {
-					display: true,
-					text: 'both II imp'
-			},
-			scales: {
-				yAxes: [{ 
-					type: 'linear',
-					display: true,
-					position: 'left',
-					id: 'ohm',
-					scaleLabel: {
-						display: true,
-						labelString: "impedanca [ohm]"
-					},
-					ticks: {
-						min: 0,
-						max: 8,
-					}
-				},
-				{ 
-					type: 'linear',
-					display: true,
-					position: 'right',
-					id: 'deg',
-					scaleLabel: {
-						display: true,
-						labelString: "Phase [deg]"
-					},
-					ticks: {
-						min: -180,
-						max: 180,
-					}
-				}],
-				xAxes: [{ 
-					type: 'logarithmic',
-					position: 'bottom',
-					ticks: {
-						min: 20,
-						max: 20000,
-						callback: function(tick, index, ticks) {
-							return tick.toLocaleString()
-						}
-					},
-					scaleLabel: {
-						display: true,
-						labelString: "Frekvenca [Hz]"
-					}
-				}]
-			}
-		}
-	});
-</script>
+
+
 <!-- imp primer-->
 <script>
 	var ctx = document.getElementById('imp');
@@ -1514,7 +878,7 @@
 					},
 					ticks: {
 						min: 0,
-						max: 50,
+						max: 40,
 					}
 				},
 				{ 
